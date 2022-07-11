@@ -1,15 +1,16 @@
 #include <iostream>
 #include <iomanip>
+#include "clocks.h"
 
 using namespace std;
 
 void clock12() {
-    cout;
+
 }
 
 
 void clock24() {
-    cout;
+
 }
 
 
@@ -18,13 +19,12 @@ void ShowClocks() {
 
     // Set width to 26
     cout << setw(26) << setfill('*');
-    cout << "h" << endl;
-
+    cout << "hello" << endl;
 
 }
 
 
 // Displays options to the user
 void ShowOptions() {
-    cout;
+
 }
