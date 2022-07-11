@@ -1,7 +1,7 @@
-main:
-	g++ -o main.o *.cpp
+main.o:
+	g++ -Wall -o main.o *.cpp
 
-run: main
+run: main.o
 	./main.o
 
 clean:
