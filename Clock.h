@@ -1,23 +1,20 @@
 #ifndef CLOCK_H
 #define CLOCK_H
-#include <iostream>
-
 using namespace std;
 
-// Clock class declarations
+// Clock class definition
 class Clock {
     private:
         string hours;
         string minutes;
         string seconds;
     public:
+        Clock();
         void printTime();
 };
 
 
-// clock function declarations
+// Clock function declarations
 void ShowClocks();
-void showOptions();
-
 
 #endif

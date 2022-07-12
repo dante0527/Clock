@@ -4,11 +4,18 @@
 #include <string>
 #include <format>
 #include "Clock.h"
-
 using namespace std;
 
+
+// Clock constructor
+Clock::Clock() {
+    hours = "00";
+    minutes = "00";
+    seconds = "00";
+}
+// Clock function definitions
 void Clock::printTime() {
-    cout << "FIXME: Finish coding 12-hour clock" << endl;
+    cout << "FIXME: Finish coding 12/24-hour clocks" << endl;
 }
 
 // Displays 12 and 24 hour clocks to the user
@@ -24,10 +31,4 @@ void ShowClocks() {
     cout << "*" << "     12-Hour Clock      " << "*" << endl;
 
 
-}
-
-
-// Displays options to the user
-void ShowOptions() {
-    cout << "FIXME: finish printing user options" << endl;
 }
