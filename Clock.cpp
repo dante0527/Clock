@@ -15,7 +15,7 @@ Clock::Clock() {
 }
 // Clock function definitions
 void Clock::printTime() {
-    cout << "FIXME: Finish coding 12/24-hour clocks" << endl;
+    cout << hours << ':' << minutes << ':' << seconds << endl;
 }
 
 // Displays 12 and 24 hour clocks to the user
