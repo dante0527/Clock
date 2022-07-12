@@ -51,14 +51,14 @@ void Clock::setTime(int option) {
                 minutes++;
                 if (minutes == 60) {
                     minutes = 0;
-                    hours++;
+                    setTime(1);
                 }
                 break;
             case 3:
                 seconds++;
                 if (seconds == 60) {
                     seconds = 0;
-                    minutes++;
+                    setTime(2);
                 }
                 break;
         }
@@ -81,14 +81,14 @@ void Clock::setTime(int option) {
             minutes++;
             if (minutes == 60) {
                 minutes = 0;
-                hours++;
+                setTime(1);
             }
             break;
         case 3:
             seconds++;
             if (seconds == 60) {
                 seconds = 0;
-                minutes++;
+                setTime(2);
             }
             break;
         }
