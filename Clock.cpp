@@ -108,13 +108,13 @@ void ShowClocks(Clock clock12, Clock clock24) {
     // Print clock titles
     cout << "*" << "     12-Hour Clock      " << "*";
     cout << setw(5) << setfill(' ') << "";
-    cout << "*" << "     24-Hour Clock      " << "*";
+    cout << "*" << "      24-Hour Clock     " << "*";
     cout << endl;
 
     // Print 12-Hour clock time
-    cout << "*        ";
+    cout << "*      ";
     clock12.printTime();
-    cout << "     *     ";
+    cout << "       *     ";
 
     // Print 24-Hour clock time
     cout << "*        ";

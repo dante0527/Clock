@@ -34,7 +34,6 @@ int main() {
     clock12.setType("12");
     clock24.setType("24");
 
-    // Allow user to set clocks
     do {
         // Clear terminal
         system("clear");
@@ -45,35 +44,41 @@ int main() {
         // Display user options
         ShowOptions();
 
-        // Accept user input
-        cin >> userInput;
+        // Add 1 second
+        clock12.setTime(3);
+        clock24.setTime(3);
 
-        // Execute user input
-        switch(userInput) {
-            // Add one hour
-            case 1:
-                clock12.setTime(1);
-                clock24.setTime(1);
-                break;
-            // Add one minute
-            case 2:
-                clock12.setTime(2);
-                clock24.setTime(2);
-                break;
-            // Add one second
-            case 3:
-                clock12.setTime(3);
-                clock24.setTime(3);
-                break;
-            // Exit program
-            case 4:
-                cout << "Goodbye." << endl;
-                break;
-            default:
-                cout << "Invalid input" << endl;
-                break;
+        // Wait 1 second
+        sleep_for(seconds(1));
+
+        if (cin.peek() != EOF) {
+            cin >> userInput;
+            // Execute user input
+            switch(userInput) {
+                // Add one hour
+                case 1:
+                    clock12.setTime(1);
+                    clock24.setTime(1);
+                    break;
+                // Add one minute
+                case 2:
+                    clock12.setTime(2);
+                    clock24.setTime(2);
+                    break;
+                // Add one second
+                case 3:
+                    clock12.setTime(3);
+                    clock24.setTime(3);
+                    break;
+                // Exit program
+                case 4:
+                    cout << "Goodbye." << endl;
+                    break;
+                default:
+                    cout << "Invalid input" << endl;
+                    break;
+            }
         }
-
     }
     while (int(userInput) != 4);
 
