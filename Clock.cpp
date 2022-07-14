@@ -24,7 +24,7 @@ string Clock::getType() {
     return clockType;
 }
 
-// Clock function definitions
+// Print time based on clockType
 void Clock::printTime() {
     if (clockType == "24") {
         cout << setw(2) << setfill('0') << hours << ':';
@@ -38,63 +38,56 @@ void Clock::printTime() {
     }
 }
 
+// Changes the time of a clock object by incrementing the selected field
 void Clock::setTime(int option) {
-    if (clockType == "24") {
-        switch (option) {
-            case 1:
+    switch (option) {
+        // Add hour
+        case 1:
+            // 24-hour clock
+            if (clockType == "24") {
                 hours++;
+                // Wrap hour at 24 and set zero
                 if (hours == 24) {
                     hours = 0;
                 }
-                break;
-            case 2:
-                minutes++;
-                if (minutes == 60) {
-                    minutes = 0;
-                    setTime(1);
-                }
-                break;
-            case 3:
-                seconds++;
-                if (seconds == 60) {
-                    seconds = 0;
-                    setTime(2);
-                }
-                break;
-        }
-    }
-    else if (clockType == "12") {
-        switch (option) {
-        case 1:
-            hours++;
-            if (hours == 12) {
-                hours = 0;
-                if (timeStatus == "AM") {
-                    timeStatus = "PM";
-                }
-                else {
-                    timeStatus = "AM";
+            }
+            // 12-hour clock
+            else if (clockType == "12") {
+                hours++;
+                // Wrap hour at 12 and set zero
+                if (hours == 12) {
+                    hours = 0;
+                    // Each time hour is wrapped, alternate timeStatus
+                    if (timeStatus == "AM") {
+                        timeStatus = "PM";
+                    }
+                    else {
+                        timeStatus = "AM";
+                    }
                 }
             }
             break;
+        // Add minute
         case 2:
             minutes++;
+            // Wrap minute at 60 and add hour
             if (minutes == 60) {
                 minutes = 0;
                 setTime(1);
             }
             break;
+        // Add second
         case 3:
             seconds++;
+            // Wrap second at 60 and add minute
             if (seconds == 60) {
                 seconds = 0;
                 setTime(2);
             }
             break;
-        }
     }
-
 }
+
 
 // Displays 12 and 24 hour clocks to the user
 void ShowClocks(Clock clock12, Clock clock24) {
