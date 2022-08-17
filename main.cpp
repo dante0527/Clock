@@ -35,6 +35,10 @@ int main() {
     clock12.setType("12");
     clock24.setType("24");
 
+    for (int i = 0; i < 24; ++i) {
+        clock12.setTime(1);
+    }
+
     do {
         // Clear terminal
         system("clear");

@@ -55,9 +55,12 @@ void Clock::setTime(int option) {
             else if (clockType == "12") {
                 hours++;
                 // Wrap hour at 12 and set zero
+                if (hours == 13) {
+                    hours = 1;
+                }
+
+                // Each time hour is 12, alternate timeStatus
                 if (hours == 12) {
-                    hours = 0;
-                    // Each time hour is wrapped, alternate timeStatus
                     if (timeStatus == "AM") {
                         timeStatus = "PM";
                     }
